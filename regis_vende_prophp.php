@@ -47,7 +47,7 @@ if ($contador_dispo==0)
 
 
 
-$verificar_vende=mysqli_query($conexion, "SELECT * FROM tbl_vendedor where dni_vendedor=$vende_dni");
+/*$verificar_vende=mysqli_query($conexion, "SELECT * FROM tbl_vendedor where dni_vendedor=$vende_dni");
 
  
 if (mysqli_num_rows($verificar_vende) > 0 )
@@ -57,7 +57,7 @@ if (mysqli_num_rows($verificar_vende) > 0 )
 
     </script>';
     exit;
-}
+}*/
 
 
 

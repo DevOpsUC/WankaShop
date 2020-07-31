@@ -84,9 +84,27 @@ $resultado=mysqli_query($conexion,"call sp_mostrar_mi_local('$varid')");
           <p> </p>
           <label>Ubicacion</label>
           <h5><?php echo $dato['ubicacion']; ?></h5>
-          <a href="editar_local.php?codigo=<?php echo $dato['id_locales']; ?>" class="btn btn-primary">Editar Local</a>
+
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Menu de Acciones
+  </button>
+  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+    <a class="   dropdown-item " href="editar_local.php?codigo=<?php echo $dato['id_locales']; ?>">Editar Local</a>
+    <a class="dropdown-item" href="reportes_local.php?codigo=<?php echo $dato['id_locales']; ?>">Reportes de Alquiler</a>
+    <a class="dropdown-item" href="cobro_participantes.php?codigo=<?php echo $dato['id_locales']; ?>">Cobros Diarios</a>
+  </div>
+</div>
+</div>
+
+
+
+
+
+         <!-- <a href="editar_local.php?codigo=<?php echo $dato['id_locales']; ?>" class="btn btn-primary">Editar Local</a>
           <a href="reportes_local.php?codigo=<?php echo $dato['id_locales']; ?>" class="btn btn-primary">Reportes</a>
-        </div>
+        </div>-->
 
         
 <?php

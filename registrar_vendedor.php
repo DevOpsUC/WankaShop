@@ -13,6 +13,9 @@ if (!isset($_GET["codigo"]))
  {
   exit();
 }
+
+
+
 $codigo = $_GET["codigo"];
 date_default_timezone_set('America/Lima');
 $fecha_actual = date("d-m-Y");
@@ -41,6 +44,15 @@ if ($contador_dispo==0)
     </script>';
     exit;
 }
+
+$cargarCliente=mysqli_query($conexion,"select * from tbl_vendedor where id_usuario=$varid");
+
+foreach($cargarCliente as $cliente)
+
+
+
+
+
 ?>
 
 
@@ -93,18 +105,18 @@ function addproducto(){
   <div class="form-row" >
     <div class="col-md-4 mb-3">
       
-      <label for="validationDefault01">Nombres y Apellidos del Vendedor</label>
-      <input type="text" class="form-control" name="txtNombre" id="validationDefault01" value="" required>
+      <label for="validationDefault01">Nombres y Apellidos del Vendedor </label>
+      <input type="text" class="form-control" name="txtNombre" id="validationDefault01" value="<?php echo $cliente['nombres_vendedor'];?>" required>
     </div>
     <div class="col-md-3 mb-3">
       <label >N° DNI </label>
-      <input type="text" class="form-control" name="txtDni"   required>
+      <input type="text" class="form-control" name="txtDni" value="<?php echo$cliente['dni_vendedor']?>"  required>
   
   </div>
   
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">Rubro de ventas</label>
-      <input type="text" class="form-control"name="txtrubro"  id="validationDefault03" required>
+      <input type="text" class="form-control"name="txtrubro"  id="validationDefault03" value="<?php echo$cliente['rubro']?>" required>
     </div>
 
     <div class=" col-md-4 mb-3" >
@@ -114,13 +126,13 @@ function addproducto(){
     </div>  
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">Email</label>
-      <input type="text" class="form-control" name="txtemail" id="validationDefault03" required>
+      <input type="text" class="form-control" name="txtemail" id="validationDefault03"  value="<?php echo$cliente['email']?>"required>
     </div>
 
    <!--Numero de Comprobante y usuario-->
     <div class="col-md-3 mb-3">
       <label for="validationDefault05">Telefono</label>
-      <input type="text" class="form-control"name="txttelefono"  id="validationDefault05" required>
+      <input type="text" class="form-control"name="txttelefono" value="<?php echo$cliente['telef']?>" id="validationDefault05" required>
     </div>
   
 

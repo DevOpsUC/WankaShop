@@ -2,8 +2,9 @@
 
 
 <?php
-session_start();
 
+session_start();
+include 'conexion_wk.php';
 $varsesion=$_SESSION['usuario'];
 $varid=$_SESSION['id_usuario'];
 if($varsesion ==null || $varsesion='')
@@ -11,7 +12,7 @@ if($varsesion ==null || $varsesion='')
 echo "No inicio sesion";
  die();
 }
-include 'conexion_wk.php';
+
 if (!isset($_GET["codigo"])) {
   exit();
 }
